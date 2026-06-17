@@ -1,9 +1,11 @@
 {
-  "name": "full-stack-main",
+  "name": "turk-food",
   "private": true,
+  "homepage": "https://Abror-maker.github.io/turk-food",
   "scripts": {
     "frontend:install": "cd frontend && npm install",
     "frontend:dev": "cd frontend && npm run dev",
-    "frontend:build": "cd frontend && npm run build"
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:deploy": "cd frontend && npm run deploy"
   }
 }
