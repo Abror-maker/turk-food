@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { apiPost } from "../../utils/api.js";
+import { apiPost, isStaticMode } from "../../utils/api.js";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -43,7 +43,7 @@ export default function Newsletter() {
         </div>
         {status === "success" && (
           <p style={{ color: "#fff", marginTop: 12, fontSize: 14, textAlign: "center" }}>
-            ✓ Successfully subscribed!
+            {isStaticMode ? "✓ Demo: obuna qabul qilindi (backend ulanmagan)." : "✓ Successfully subscribed!"}
           </p>
         )}
       </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Breadcrumbs from "../components/layout/Breadcrumbs.jsx";
-import { apiGet, apiPost } from "../utils/api.js";
+import { apiGet, apiPost, isStaticMode } from "../utils/api.js";
 import { siteConfig } from "../data/data.js";
 
 export default function ContactPage() {
@@ -74,7 +74,11 @@ export default function ContactPage() {
             <button type="submit" className="form-submit" disabled={status === "loading"}>
               {status === "loading" ? "Sending..." : "Send message"}
             </button>
-            {status === "success" && <p className="form-msg form-msg--success">Message sent successfully!</p>}
+            {status === "success" && (
+              <p className="form-msg form-msg--success">
+                {isStaticMode ? "Demo: xabar qabul qilindi (backend ulanmagan)." : "Message sent successfully!"}
+              </p>
+            )}
             {status === "error" && <p className="form-msg form-msg--error">Failed to send. Please try again.</p>}
           </form>
         </div>
