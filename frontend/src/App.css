@@ -1,0 +1,59 @@
+.app {
+  font-family: 'Lato', sans-serif;
+}
+
+.backend-data {
+  padding: 60px 5%;
+  background: #f7f7f7;
+}
+
+.backend-data__container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.backend-data__container h2 {
+  margin-bottom: 24px;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #1a1a1a;
+}
+
+.backend-data__grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.backend-data__card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.backend-data__card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.backend-data__card p {
+  margin: 0 0 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.backend-data__meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #e63946;
+  font-weight: 600;
+}
+
+.backend-data__error {
+  margin: 16px 0;
+  color: #c53030;
+}
