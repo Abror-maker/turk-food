@@ -1,3 +1,38 @@
-import { copyFileSync } from 'fs'
+import { writeFileSync } from "fs";
 
-copyFileSync('dist/index.html', 'dist/404.html')
+const spa404 = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>EATURKISH — Restaurant</title>
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 1;
+      var locationRef = window.location;
+      locationRef.replace(
+        locationRef.protocol +
+          "//" +
+          locationRef.hostname +
+          (locationRef.port ? ":" + locationRef.port : "") +
+          locationRef.pathname
+            .split("/")
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join("/") +
+          "/?/" +
+          locationRef.pathname
+            .slice(1)
+            .split("/")
+            .slice(pathSegmentsToKeep)
+            .join("/")
+            .replace(/&/g, "~and~") +
+          (locationRef.search
+            ? "&" + locationRef.search.slice(1).replace(/&/g, "~and~")
+            : "") +
+          locationRef.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
+`;
+
+writeFileSync("dist/404.html", spa404);

@@ -35,7 +35,7 @@ jobs:
         working-directory: frontend
 
       - name: Add SPA fallback
-        run: cp dist/index.html dist/404.html
+        run: node scripts/copy-404.js
         working-directory: frontend
 
       - uses: actions/upload-pages-artifact@v3
